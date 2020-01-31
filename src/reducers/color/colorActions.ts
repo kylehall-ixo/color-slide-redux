@@ -1,3 +1,7 @@
+export const ColorActionTypes = {
+  COLOR_CHANGE: 'COLOR_CHANGE',
+}
+
 interface ColorChangeAction extends BasicAction {
   newColor: string
 }
@@ -7,7 +11,7 @@ interface BasicAction {
 }
 
 export const changeCurrentColor = (newColor: string): ColorChangeAction => ({
-  type: 'COLOR_CHANGE',
+  type: ColorActionTypes.COLOR_CHANGE,
   newColor,
 })
 

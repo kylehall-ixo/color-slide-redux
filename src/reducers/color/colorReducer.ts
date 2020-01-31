@@ -1,4 +1,4 @@
-import { ColorAction } from './colorActions'
+import { ColorAction, ColorActionTypes } from './colorActions'
 
 const initialState = {
   currentColor: '',
@@ -6,7 +6,7 @@ const initialState = {
 
 export const colorReducer = (state = initialState, action: ColorAction) => {
   switch (action.type) {
-    case 'COLOR_CHANGE':
+    case ColorActionTypes.COLOR_CHANGE:
       return {
         ...state,
         currentColor: action.newColor,
