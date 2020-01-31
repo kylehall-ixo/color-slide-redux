@@ -1,7 +1,9 @@
 import React from 'react'
-import { connect, RootStateOrAny } from 'react-redux'
+import { connect } from 'react-redux'
 
 import ColorSwatch from '../components/ColorSwatch'
+import { colorSelector } from '../selectors/colorSelector'
+import { ColorSlideState } from '../reducers/state'
 
 interface ColorDisplayProps {
   color: string
@@ -13,8 +15,8 @@ const ColorDisplay: React.FC<ColorDisplayProps> = ({ color }) => (
   </div>
 )
 
-const mapStateToProps = (state: RootStateOrAny) => ({
-  color: state.color.currentColor,
+const mapStateToProps = (state: ColorSlideState) => ({
+  color: colorSelector(state),
 })
 
 const mapDispatchToProps = () => ({})
